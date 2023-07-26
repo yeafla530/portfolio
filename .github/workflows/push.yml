@@ -29,6 +29,7 @@ jobs:
 
       - name: Deploy Firebase
       	env:
+          CI: true
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         run: |
           npm install firebase-tools
