@@ -29,7 +29,7 @@ jobs:
       - run: npm run build
 
       - name: Deploy
-        uses: yeafla530/react-portfolio@master
+        uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting
         env:
