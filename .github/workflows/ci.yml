@@ -29,7 +29,7 @@ jobs:
       - run: npm run build
 
       - name: Deploy
-        uses: yeafla530/react-portfolio
+        uses: yeafla530/react-portfolio@master
         with:
           args: deploy --only hosting
         env:
