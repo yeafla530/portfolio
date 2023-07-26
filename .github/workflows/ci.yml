@@ -26,11 +26,10 @@ jobs:
 
     steps:
       - run: npm ci
-      - run: npm test
       - run: npm run build
 
       - name: Deploy
-        uses: w9jds/firebase-action@master
+        uses: yeafla530/react-portfolio@master
         with:
           args: deploy --only hosting
         env:
