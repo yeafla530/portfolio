@@ -29,6 +29,7 @@ jobs:
       - run: npm run build
 
       - name: Deploy
+        # 라이브러리
         uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting
