@@ -3,7 +3,7 @@
     "rules": "y"
   },
   "hosting": {
-    "site": "yerm-react-diary",
+    "site": "yerim-portfolio",
     "public": "build",
     "ignore": [
       "firebase.json",
