@@ -1,10 +1,45 @@
-name: Our CI
-on: push
+name: CI
+
+# 여기 설정되는 값으로 Github가 트리거된다.
+on:
+  push:
+    branches:
+      - develop
+      - master
+
 jobs:
   build:
+    name: Deployment for Develop env
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - run: npm ci
-      - run: npm test
-      - run: npm run build
+      - name: Checkout branch
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: install --production # will run `yarn install` command
+
+      # 위에서 맞춰두었던 프로젝트 아이디가 여기서 사용됩니다.
+      # 빌드용 스크립트를 나누어 build:master, build:develop 등을 구분해서 실행할 수 있게 합니다.
+      - name: Create variables
+        id: vars
+        run: |
+          branch=${GITHUB_REF##*/}
+          echo "::set-output name=PROJECT_ID::service-name-${branch}" 
+          echo "::set-output name=BUILD_SCRIPT::build:${branch}"
+
+      - name: Build
+        uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: ${{ steps.vars.outputs.BUILD_SCRIPT }}
+
+      - name: Deploy
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting
+        env:
+          CI: true
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          PROJECT_ID: ${{ steps.vars.outputs.PROJECT_ID }}
