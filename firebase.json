@@ -4,7 +4,7 @@
   },
   "hosting": {
     "site": "yerim-portfolio",
-    "public": "build",
+    "public": "out",
     "ignore": [
       "firebase.json",
       "**/.*",
