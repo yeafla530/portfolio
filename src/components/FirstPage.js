@@ -1,5 +1,5 @@
 import {useEffect} from 'react';
-
+import "../assets/first.css"
 
 function FirstPage() {
     return (

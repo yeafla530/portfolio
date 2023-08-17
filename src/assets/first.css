@@ -1,0 +1,100 @@
+.center {
+    display: flex;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Black Han Sans', sans-serif;
+  }
+  
+  
+  .mainText {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+  
+  
+  .mainText h1 {
+    text-shadow: 3px 3px 0 #69A1F0, 6px 6px 0 #7EAEF2,
+      9px 9px #90BAF5, 12px 12px 0 #A2C4F5;
+    /* font-family: bungee, sans-serif; */
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: calc(2rem + 5vw);
+    text-align: center;
+    margin: 0;
+    color: #5192ED;
+    /* color: transparent;
+    background-color: white;
+    background-clip: text; */
+    animation: shadows 1.2s ease-in infinite, move 1.2s ease-in infinite;
+    letter-spacing: 0.4rem;
+  }
+  
+  @keyframes shadows {
+    0% {
+      text-shadow: none;
+    }
+    10% {
+      text-shadow: 3px 3px 0 #69A1F0;
+    }
+    20% {
+      text-shadow: 3px 3px 0 #69A1F0,
+        6px 6px 0 #7EAEF2;
+    }
+    30% {
+      text-shadow: 3px 3px 0 #69A1F0,
+        6px 6px 0 #7EAEF2, 9px 9px #90BAF5;
+    }
+    40% {
+      text-shadow: 3px 3px 0 #69A1F0,
+        6px 6px 0 #7EAEF2, 9px 9px #90BAF5,
+        12px 12px 0 #A2C4F5;
+    }
+    50% {
+      text-shadow: 3px 3px 0 #69A1F0,
+        6px 6px 0 #7EAEF2, 9px 9px #90BAF5,
+        12px 12px 0 #A2C4F5;
+    }
+    60% {
+      text-shadow: 3px 3px 0 #69A1F0,
+        6px 6px 0 #7EAEF2, 9px 9px #90BAF5,
+        12px 12px 0 #A2C4F5;
+    }
+    70% {
+      text-shadow: 3px 3px 0 #69A1F0,
+        6px 6px 0 #7EAEF2, 9px 9px #90BAF5;
+    }
+    80% {
+      text-shadow: 3px 3px 0 #69A1F0,
+        6px 6px 0 #7EAEF2;
+    }
+    90% {
+      text-shadow: 3px 3px 0 #69A1F0;
+    }
+    100% {
+      text-shadow: none;
+    }
+  }
+  
+  @keyframes move {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    40% {
+      transform: translate(-12px, -12px);
+    }
+    50% {
+      transform: translate(-12px, -12px);
+    }
+    60% {
+      transform: translate(-12px, -12px);
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+  
