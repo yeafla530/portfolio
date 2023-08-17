@@ -4,7 +4,6 @@ import FirstPage from '../components/FirstPage';
 import SecondPage from '../components/SecondPage';
 import ThirdPage from '../components/ThirdPage';
 import FourthPage from '../components/FourthPage';
-import Slider from '../components/slider';
 
 
 const FullPageScroll = () => {
@@ -21,9 +20,8 @@ const FullPageScroll = () => {
                 <FullpageSection className="flex">
                     <ThirdPage/>
                 </FullpageSection>
-                <FullpageSection>
-                    {/* <FourthPage/> */}
-                    <Slider/>
+                <FullpageSection className="flex">
+                    <FourthPage/>
                 </FullpageSection>
 
             </FullPageSections>

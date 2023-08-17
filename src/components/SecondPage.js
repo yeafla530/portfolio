@@ -1,17 +1,25 @@
-import react from 'react';
+import { useEffect } from 'react';
 import '../assets/second.css'
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 
 function SecondPage() {
     const moveUrl = (url) => {
         window.open(url, "_blank", "noreferrer")
     }
+    
+    useEffect(() => {
+        AOS.init();
+    })
+
     return (
         <div className="container infoPage">
-            <div className="info">
+            <div className="info" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="600" data-aos-delay="700">
                 <h1>INFORMATION</h1>
             </div>
             <div className="profile">
-                <div className="profileImage">
+                <div className="profileImage" data-aos="fade-right" data-aos-delay="1000" data-aos-once="true">
                     <img src={process.env.PUBLIC_URL + 'profile.png'} alt="" />
                 </div>
                 <div className="profileUrl">

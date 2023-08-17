@@ -56,21 +56,34 @@ canvas {
   box-shadow: rgba(100, 100, 111, 0.2, 0px, 7px, 20px, 0px);
 }
 
-.sprinkle-container {
+.sprinkles-container {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   pointer-events: none;
 }
 
 .sprinkle {
   position: absolute;
-  background-color: white;
   width: 2px;
   height: 2px;
+  background-color: white;
   border-radius: 50%;
+  animation: sprinkle-flicker 2s infinite;
+}
+
+.flicker {
+  animation: sprinkle-flicker 3.5s infinite;
+}
+
+
+@keyframes sprinkle-flicker {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 .App {
