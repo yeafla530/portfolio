@@ -1,0 +1,78 @@
+/* 슬라이더 컨테이너 스타일 */
+.slider-container {
+    width: 80%;
+    position: relative;
+}
+
+.project__title {
+    position: absolute;
+    z-index: 1;
+    left: -3rem;
+    top:-4rem;
+    color: rgb(245, 255, 248);
+    font-size: 4rem;
+    box-sizing: border-box;
+    font-family: 'Black Han Sans', sans-serif;
+    /* font-family: 'Gowun Dodum', sans-serif; */
+    /* font-family: 'Jua', sans-serif;  */
+}
+
+.project__title::after {
+    content: "PROJECTS.";
+    position: absolute;
+    top: -0.2rem;
+    left: -0.2rem;
+    color: transparent;
+    -webkit-text-stroke: 0.15rem #47fc98;
+    /* -webkit-text-stroke: 0.15rem #8bb0ff; */
+    font-size: 6rem;
+}
+
+/* 각 슬라이드 스타일 */
+.slide {
+    display: flex;
+    height: 80vh;
+    background-color: #8bb0ff00;
+}
+/* 설명 */
+.slide__context {
+    flex-grow: 1;
+    min-width: 50%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+/* 이미지 스타일 */
+.slide__img {
+    flex-grow: 1;
+    min-width: 50%;
+    max-height: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.slide__img img {
+    width: 100%;
+    height: auto;
+}
+
+.slick-prev {
+    left: -70px
+}
+
+.slick-next {
+    right: -30px;
+    
+}
+
+.slick-prev::before,
+.slick-next::before {
+    font-size: 60px; /* 크기를 조절하세요 */
+    color: #8bb0ff;
+}
