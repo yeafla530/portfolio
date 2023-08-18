@@ -4,13 +4,13 @@ import "../assets/first.css"
 function FirstPage() {
     return (
         <div className="container center">
-            <div class="mainText">
+            <div className="mainText">
                 <h1>LEE YERIM</h1>
             </div>
-            <div class="mainText">
+            <div className="mainText">
                 <h1>FRONTEND</h1>
             </div>
-            <div class="mainText">
+            <div className="mainText">
                 <h1>PORTFOLIO</h1>
             </div>
             <div className="down-box">
