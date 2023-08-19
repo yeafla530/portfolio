@@ -21,11 +21,9 @@ const FourthPage = () => {
 
   const handleSlideChange = (index) => {
     setActiveSlideIndex(index);
-    console.log("setActiveSlideIndex", activeSlideIndex)
   };
 
   useEffect(()=>{
-    console.log("activeSlideIndex", activeSlideIndex)
     addCustomClassToSlide((activeSlideIndex)%11);
   },[activeSlideIndex])
 
@@ -35,7 +33,6 @@ const FourthPage = () => {
       slideItems.forEach((item, i) => {
           const title = item.querySelector('.project__title'); // 2번째 하위 요소 선택
           const image = item.querySelector('.slide__img');
-          console.log("비교", i, index)
           if (i === index+1) {
               title.classList.add('project__title__active'); // 원하는 클래스 추가
               image.classList.remove('slide__img__none')

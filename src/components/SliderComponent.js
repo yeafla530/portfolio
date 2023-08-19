@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import Slider from "react-slick";
+import React from "react";
 import '../assets/fourth.css'
 
 
@@ -16,6 +15,10 @@ function SliderComponent({array}) {
                 '■ firebase를 이용한 배포 진행',
                 '■ localStorage를 이용한 데이터 저장',
                 '■ 그 외 Typescript, Redux, Jest & RTL에 대해 학습 진행완료'],
+            url: {
+                'git': 'https://github.com/yeafla530/react-diary',
+                'home': 'https://yerm-react-diary.web.app/'
+            },
         },
         {
             skills:['Vue.js', 'Vuex', 'scss', 'Git', 'Toad', 'Swagger', 'vue-chart.js', 'swiper.js'],
@@ -30,6 +33,9 @@ function SliderComponent({array}) {
                 '■ lazy component 와 loader 용량 줄이기, 이미지 압축 등을 이용한 앱 속도 개선',
                 '■ scss 사용하여 반응형 서비스에 맞는 스타일 적용'
             ],
+            url: {
+                'home': 'https://m.bearun.kr/'
+            }
         },
         {
             skills:['Vue.js', 'Vuex', 'css', 'Git', 'Swagger', 'Jira'],
@@ -41,9 +47,12 @@ function SliderComponent({array}) {
                 '■ Vuex를 사용하여 중앙 데이터 관리',
                 '■ SSH를 이용해 Vue.js build파일 배포 진행',
                 '■ Git branch와 Jira를 이용한 협업',
-                '■ CSS를 이용한 UI/UX작업',
+                '■ CSS를 이용한 퍼블리싱 작업',
                 '■ 프로젝트 우수상 수상 (3등)'
-            ]
+            ],
+            url: {
+                'git': 'https://gitlab.com/yearim.lee15b/edu-ai'
+            }
 
         },
         {
@@ -55,9 +64,12 @@ function SliderComponent({array}) {
                 '■ Vue.js를 이용한 REST API 통신',
                 '■ 인터랙티브 웹을 이용한 프롤로그 제작',
                 '■ Git branch와 Jira를 이용한 협업',
-                '■ CSS를 이용한 UI/UX작업(100%) - 미팅룸 UI/UX 구현',
+                '■ CSS를 이용한 퍼블리싱 작업(100%) - 미팅룸 UI/UX 구현',
                 '■ 프로젝트 우수상 수상 (1등)'
             ],
+            url: {
+                'git': 'https://gitlab.com/yearim.lee15b/voda-pjt'
+            }
         },
         {
             skills:['Vue.js', 'css', 'Git', 'Swagger', 'Jira'],
@@ -67,13 +79,19 @@ function SliderComponent({array}) {
             content: [
                 '■ Vue.js를 이용한 REST API 통신 - 댓글작성, 알고리즘 게시글 작성, 피드 등',
                 '■ Git branch와 Jira를 이용한 협업',
-                '■ CSS를 이용한 반응형 UI/UX작업',
+                '■ CSS를 이용한 반응형 퍼블리싱 작업',
                 '■ 프로젝트 우수상 수상 (2등)'
             ],
+            url: {
+                'git': 'https://gitlab.com/yearim.lee15b/jobara'
+            }
         }
     ]
     
-    
+    const moveUrl = (url) => {
+        console.log('?', url)
+        window.open(url, "_blank", "noreferrer")
+    }
     return (
         <div className="slide">
             <div className="project__title">
@@ -104,9 +122,19 @@ function SliderComponent({array}) {
                         </p>
                     ))}
                 </div>
+                <div className="project__url">
+                    {contents[index].url['git'] ? <div className="url_image" onClick={()=>moveUrl(contents[index].url['git'])}>
+                        <img src={process.env.PUBLIC_URL + 'github.png'} alt=""/>    
+                    </div> : <></>}
+                    {contents[index].url['home'] ? <div className="url_image" onClick={()=>moveUrl(contents[index].url['home'])}>
+                        <img src={process.env.PUBLIC_URL + 'worldwide.png'} alt="" />    
+                    </div> : <></>}
+                </div>
             </div>
         </div>
     )
+    // 
+    // 
 }
 
 export default SliderComponent
