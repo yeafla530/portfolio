@@ -152,9 +152,6 @@
     margin-left: 0;
 }
 
-.content p {
-    font-size: calc(2rem+4vw);
-}
 
 .date_contribution {
     color: #69A1F0;
